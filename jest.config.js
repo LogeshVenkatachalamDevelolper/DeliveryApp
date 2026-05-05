@@ -1,6 +1,6 @@
 module.exports = {
   preset: '@react-native/jest-preset',
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
     '!src/**/index.ts',
@@ -8,6 +8,7 @@ module.exports = {
     '!src/**/enums/**',
     '!src/**/modal/**',
   ],
+  setupFilesAfterEnv: ['./jest-setup.js'],
   transformIgnorePatterns: [
     'node_modules/(?!(react-native' +
       '|@react-native' +

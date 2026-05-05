@@ -12,13 +12,19 @@ const mockItem: OnboardingItem = {
 };
 
 describe('Component Test OnboardingCard', () => {
-  test('Title And Content Visible', async () => {
+  test('Title And Content Visible',  () => {
     render(
-      <SafeAreaProvider>
+      <SafeAreaProvider 
+      initialMetrics={{
+      frame: { x: 0, y: 0, width: 375, height: 812 },
+      insets: { top: 0, left: 0, right: 0, bottom: 0 },
+    }}
+    >
         <OnboardingCard item={mockItem} />
       </SafeAreaProvider>,
     );
-    expect(await screen.findByText(mockItem.title)).toBeOnTheScreen();
-    expect(await screen.findByText(mockItem.content)).toBeOnTheScreen();
+
+    expect( screen.getByText(mockItem.title)).toBeOnTheScreen();
+    expect( screen.getByText(mockItem.content)).toBeOnTheScreen();
   });
 });
