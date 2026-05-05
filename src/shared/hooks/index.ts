@@ -1,1 +1,1 @@
-export * from './usePaddingHook';
+export * from './useSafeAreaHook';
