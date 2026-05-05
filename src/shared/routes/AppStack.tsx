@@ -22,17 +22,18 @@
 // export default AppStack;
 
 // App.tsx
+import HomeScreen from '@/examples/lazyLoadingTest/HomeScreen';
+import ReportsScreen from '@/examples/lazyLoadingTest/ReportScreen';
+// import SettingsScreen from '@/examples/lazyLoadingTest/SettingsScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { LazyExoticComponent } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import HomeScreen from './lazyLoadingTest/HomeScreen';
 // import SettingsScreen from './lazyLoadingTest/SettingsScreen';
-import ReportsScreen from './lazyLoadingTest/ReportScreen';
 
 // ✅ Lazy load each screen
 // const HomeScreen = React.lazy(() => import('./lazyLoadingTest/HomeScreen'));
 const SettingsScreen = React.lazy(
-  () => import('./lazyLoadingTest/SettingsScreen'),
+  () => import('@/examples/lazyLoadingTest/SettingsScreen'),
 );
 // const ReportsScreen = React.lazy(
 //   () => import('./lazyLoadingTest/ReportScreen'),
