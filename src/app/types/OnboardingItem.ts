@@ -1,4 +1,8 @@
+import { ImageSourcePropType } from 'react-native';
+
 export type OnboardingItem = {
   id: string;
-  data: string;
+  title: string;
+  content: string;
+  logo: ImageSourcePropType;
 };

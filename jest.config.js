@@ -13,6 +13,8 @@ module.exports = {
       '|@react-native' +
       '|@react-navigation' +
       '|@shopify/flash-list' +
+      '|react-native-safe-area-context' +
+      '|react-native-reanimated' +
       ')/)',
   ],
 };

@@ -6,7 +6,6 @@ export const GLOBAL_STYLES = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
-    padding: SPACING.md,
   },
 
   card: {
@@ -33,3 +32,16 @@ export const GLOBAL_STYLES = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export const spaceTopWithSafeArea = (inset: number) => {
+  return inset + SPACING.md;
+};
+export const spaceLeftWithSafeArea = (inset: number) => {
+  return inset + SPACING.sm;
+};
+export const spaceRightWithSafeArea = (inset: number) => {
+  return inset + SPACING.sm;
+};
+export const spaceBottomWithSafeArea = (inset: number) => {
+  return inset + SPACING.md;
+};

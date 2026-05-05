@@ -1,1 +1,1 @@
-export * from './LogoPath';
+export * from './logo/LogoPath';
