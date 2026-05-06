@@ -1,0 +1,7 @@
+# Protect GitHub workflows
+
+.github/workflows/\* @LogeshVenkatachalamDeveloper
+.github/CODEOWNERS @LogeshVenkatachalamDeveloper
+
+<!-- .github/workflows/* @org/mobile-leads
+.github/CODEOWNERS @org/mobile-leads -->
