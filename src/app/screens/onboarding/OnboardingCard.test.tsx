@@ -14,8 +14,8 @@ describe('Component Test OnboardingCard', () => {
   test('Title And Content Visible', () => {
     render(<OnboardingCard item={mockItem} />);
 
-    expect(screen.getByText(mockItem.title)).toBeOnTheScreen();
-    // expect(screen.getByText('mockItem.title')).toBeOnTheScreen();
+    // expect(screen.getByText(mockItem.title)).toBeOnTheScreen();
+    expect(screen.getByText('mockItem.title')).toBeOnTheScreen();
     expect(screen.getByText(mockItem.content)).toBeOnTheScreen();
   });
 });
