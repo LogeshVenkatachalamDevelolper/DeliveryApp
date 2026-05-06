@@ -1,4 +1,3 @@
 # Protect GitHub workflows
-
 .github/workflows/* @LogeshVenkatachalamDevelolper
 .github/CODEOWNERS @LogeshVenkatachalamDevelolper
