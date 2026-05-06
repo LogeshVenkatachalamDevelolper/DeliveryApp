@@ -1,0 +1,67 @@
+name: React Native CI
+
+on:
+  push:
+    branches: ['**']
+
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    name: Lint + Tests + Coverage
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test -- --coverage
+
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage
+
+  # android-build:
+  #   name: Android Build Check
+  #   runs-on: ubuntu-latest
+  #   needs: quality
+
+  #   steps:
+  #     - uses: actions/checkout@v4
+
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: 22
+  #         cache: 'npm'
+
+  #     - name: Install dependencies
+  #       run: npm ci
+
+  #     - name: Setup Java
+  #       uses: actions/setup-java@v4
+  #       with:
+  #         distribution: 'temurin'
+  #         java-version: '17'
+
+  #     - name: Build Android APK
+  #       run: |
+  #         cd android
+  #         chmod +x gradlew
+  #         ./gradlew assembleDebug
